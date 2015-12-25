@@ -1,0 +1,15 @@
+sickrage:
+  image: jbogatay/sickrage
+  restart: always
+  ports:
+    - "8081:8081"
+  container_name: sickrage
+  environment:
+    - SICK_UID=500
+    - SICK_GID=500
+  volumes:
+    - /etc/localtime:/etc/localtime:ro
+    - /home/media/.config/sickrage:/config
+    - /home/media/video/tv:/tv
+    - /home/media/video/in/tv:/downloads
+    - /home/media/blackhole-out/tv:/blackhole
