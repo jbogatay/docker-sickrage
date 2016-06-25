@@ -2,7 +2,7 @@ FROM alpine:3.4
 MAINTAINER "Jeff Bogatay <jeff@bogatay.com>"
 
 VOLUME ["/config","/downloads","/tv","/blackhole"]
-EXPOSE 5050
+EXPOSE 8081
 CMD ["/bin/appstart.sh"]
 
 RUN apk add --no-cache --update \
