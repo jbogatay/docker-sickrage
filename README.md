@@ -1,7 +1,7 @@
 docker-sickrage
 ================
 
-Ubuntu:1510 based sickrage.   Just sickrage.
+Alpine based sickrage.  Just sickrage.  Under 85MB.
 
 Complete run command with all options
 
@@ -12,10 +12,10 @@ Complete run command with all options
         -v /mytvdir:/tv \
         -v /myblackholedir:/blackhole \
         -v /etc/localtime:/etc/localtime:ro \
-        -e SICK_UID=500 -e SICK_GID=500 \
+        -e APP_UID=500 -e APP_GID=500 \
         jbogatay/sickrage
 
 
 Change directory mappings as appropriate (myconfigdir, mydownloaddir, tv, blackhole).
 
-SICK_UID and SICK_GID are optional, but will default to 500/500.   Specify the UID/GID that corresponds to the **HOST** UID/GID you want to own the downloads, config and tv directories.
+APP_UID and APP_GID are optional, but will default to 500/500.   Specify the UID/GID that corresponds to the **HOST** UID/GID you want to own the downloads, config and tv directories.

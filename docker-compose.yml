@@ -5,8 +5,8 @@ sickrage:
     - "8081:8081"
   container_name: sickrage
   environment:
-    - SICK_UID=500
-    - SICK_GID=500
+    - APP_UID=500
+    - APP_GID=500
   volumes:
     - /etc/localtime:/etc/localtime:ro
     - /home/media/.config/sickrage:/config
