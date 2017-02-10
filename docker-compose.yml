@@ -1,14 +1,13 @@
 sickrage:
   image: jbogatay/sickrage
-  restart: always
+  restart: unless-stopped
   ports:
     - "8081:8081"
   container_name: sickrage
   environment:
-    - APP_UID=500
-    - APP_GID=500
+    - PUID=1001
+    - PGID=1001
   volumes:
-    - /etc/localtime:/etc/localtime:ro
     - /home/media/.config/sickrage:/config
     - /home/media/video/tv:/tv
     - /home/media/video/in/tv:/downloads

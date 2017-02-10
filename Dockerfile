@@ -1,22 +1,6 @@
-FROM alpine:3.4
-MAINTAINER "Jeff Bogatay <jeff@bogatay.com>"
+FROM jbogatay/baseimage-alpine-python
+
+COPY root/ /
 
 VOLUME ["/config","/downloads","/tv","/blackhole"]
 EXPOSE 8081
-CMD ["/bin/appstart.sh"]
-
-RUN apk add --no-cache --update \
-        curl \
-        openssl \
-        python \
-        py-openssl \
-        py-cryptography \
-        py-lxml \
-	    py-pip \
-        py-enum34 \
-        py-cffi \
-        git \
-        unrar &&\
-    rm -rf /var/cache/apk/* /tmp/*
-
-ADD appstart.sh /bin
